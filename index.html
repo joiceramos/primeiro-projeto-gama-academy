@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Black Friday</title>
+</head>
+<body>
+    
+    <section class="section-container background-section section-one">
+        <nav class="nav">
+            <div class="nav-sup">
+                <div class="logo">
+                    <a><img src="/assets/LOGO.svg" alt=""> </a>
+                </div>
+                <div class="search">
+                    <input type="text" name="pesquisar" id="" placeholder="Pesquisar">
+                </div>
+                <div class="perfil">
+                    <a>
+                        <span class="user-icon"><img src="/assets/user.png" alt=""></span>
+                        <span class="user-text">Entrar</span>
+                    </a>
+                    <a> <span class="cart-icon"></span></a>
+                </div>
+            </div>
+            
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Produtos</a></li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+        <img src="assets/bf22.png" alt="logotipo">
+    </section>
+    <section class="section-container background-section section-two">
+        <div class="card-container">
+            <div id="content">
+                <form id="form" action="">
+                    <input type="text" placeholder="name" id="nome">
+                    <input type="text" placeholder="email" id="email">
+                    <input type="submit" placeholder="submit">
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Todos os direitos reservados.</p>
+    </footer>
+</body>
+<script type="text/javascript">
+    function checkScroll() {
+        if ($(window).scrollTop() > 50) {
+            $('.nav').addClass("scrolledTop");
+        } else {
+            $('.nav').removeClass("scrolledTop");
+        }                
+    }
+    if ($('.nav').length > 0) {
+        $(window).on("scroll load resize", function() {
+            checkScroll();
+        });
+    }   
+</script>
+<script src="js/script.js"></script>
+
+</html>

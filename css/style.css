@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.nav {
+    width: 100%;
+    height: 6em;
+    position: fixed;
+    top: 0;
+}
+
+.nav-sup {
+    margin: 0 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-sup .search input{
+    width: 25em;
+    background-color: rgba(131, 131, 131, 0.4);
+    border: 1px solid rgb(131, 131, 131);
+    border-radius: 5px;
+    background-image: url(/assets/lupa.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.nav-sup .perfil .user-icon{
+    width: 50px;
+    height: 50px;
+    margin-left: 3em;
+    border: 2px solid #E7E7E7;
+    border-radius: 35px;
+}
+.nav-sup .perfil .user-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-sup .perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-sup .perfil a{
+    color: #FFF;
+}
+
+.nav-sup .logo a img {
+    width: 250px;
+    height: 100px;
+}
+
+.nav ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav ul li {
+    justify-content: flex-end;
+}
+
+.nav ul li a {
+    margin: 2em;
+    justify-content: right;
+    text-decoration: none;
+    color: #FFF;
+    text-align: right;
+    font-size: 1em;
+}
+
+
+
+.nav.scrolledTop {
+    background: rgba( 0, 0, 0, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba(65, 66, 75, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+}
+
+.section-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-section {
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-one {
+    background-image: url(../assets/1tt.png);
+}
+
+.section-two {
+    background-image: url(../assets/1tt.png);
+}
+
+form {
+    display: grid;
+}
+
+.card-container {
+    max-width: 450px;
+    background: #FFF;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+input {
+    width:  100%;
+    height: 30px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid salmon;
+}
+
+footer {
+    height: 150px;
+    padding: 25px;
+    text-align: center;
+    color: aliceblue;
+    background-color: black;
+}
+
