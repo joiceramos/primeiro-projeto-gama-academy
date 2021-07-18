@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Mono+One&display=swap');
+
+:root {
+    --color-neon: rgb(0, 238, 255);
+}
 
 * {
     margin: 0;
@@ -10,50 +14,55 @@ html {
     scroll-behavior: smooth;
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .nav {
     width: 100%;
-    height: 6em;
+    height: 9em;
     position: fixed;
     top: 0;
+    background-color: #1d1d1d;
+    z-index: 1000;
 }
 
 .nav-sup {
     margin: 0 2em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .nav-sup .search input{
-    width: 25em;
-    background-color: rgba(131, 131, 131, 0.4);
+    width: 430px;
+    padding: 0 1em;
+    background-color: rgb(255, 255, 255);
     border: 1px solid rgb(131, 131, 131);
     border-radius: 5px;
-    background-image: url(/assets/lupa.png);
-    background-repeat: no-repeat;
-    background-position: right;
 }
 
-.nav-sup .perfil .user-icon{
-    width: 50px;
-    height: 50px;
-    margin-left: 3em;
-    border: 2px solid #E7E7E7;
-    border-radius: 35px;
+.fa-search {
+    width: 30px;
+    height: 30px;
+    margin-left: -1.8em;
 }
-.nav-sup .perfil .user-icon img {
-    width: 24px;
-    height: 24px;
+
+.nav-sup .perfil .user-icon img,
+.nav-sup .perfil .heart-icon img,
+.nav-sup .perfil .cart-icon img {
+    width: 30px;
+    height: 30px;
+    margin-left: 5em;
 }
 
 .nav-sup .perfil {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 30em;
 }
 
 .nav-sup .perfil a{
     color: #FFF;
+    font-size: 0.9em;
+    text-decoration: none;
 }
 
 .nav-sup .logo a img {
@@ -63,40 +72,56 @@ html {
 
 .nav ul {
     width: 100%;
-    display: flex;
     list-style: none;
-    align-items: center;
-    justify-content: center;
+    margin-top: -0.7em;
 }
 
 .nav ul li {
-    justify-content: flex-end;
+    text-align: center;
+    margin: -0.4em;
 }
 
 .nav ul li a {
-    margin: 2em;
-    justify-content: right;
     text-decoration: none;
     color: #FFF;
-    text-align: right;
-    font-size: 1em;
+    text-align: center;
+    font-size: 0.9em;
 }
 
+.nav ul li a img {
+    width: 20px;
+    height: 20px;
+    margin-top: 0.5em;
+}
 
+#department {
+    width: 190px;
+    height: 25px;
+    background-color: rgba(58, 58, 58, 0.849);
+    padding: 0.3em;
+    margin-top: 0.1em;
+    border-radius: 10px;
+}
 
-.nav.scrolledTop {
-    background: rgba( 0, 0, 0, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba(65, 66, 75, 0.37);
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
+#department a {
+    margin-top: 1em;
+}
+
+.line-rainbow {
+    margin-top: 1.2em;
+    margin-left: 3.6em;
+    width: 90vw;
+    height: 5px;
+    background: linear-gradient(90deg, #FF0099, #9900C9, #2501FF, #03DCEA, #44D400, #FAFF00, #FF9900, #FF0000);
+}
+
+.container {
+    margin: 0 5em;
 }
 
 .section-container {
     height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .background-section {
@@ -113,30 +138,249 @@ html {
     background-image: url(../assets/1tt.png);
 }
 
+.content-bf {
+    width: 31vw;
+    padding-top: 13em;
+    padding-left: 5em;
+}
+
+.bf-title2 {
+    margin-left: 1.5em;
+}
+
+.content-bf h1{
+    font-size: 4em;
+    color: rgba(0, 0, 0, 0.397);
+    font-family: 'Rubik Mono One', sans-serif;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    -webkit-text-stroke-color: var(--color-neon);
+    text-shadow: 0 0 30px var(--color-neon);
+}
+
+.content-bf h2 {
+    color: #FFF;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.content-bf h2 span{
+    background-color: #ff9e01;
+}
+
+.countdown {
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    margin-top: 2em;
+}
+
+#contador {
+    width: 50%;
+    margin-left: 24.5%;
+    margin-top: 1em;
+    justify-content: space-around;
+}
+
+#contador .box-count {
+    width: 4em;
+    height: 2em;
+    border-radius: 10px;
+    padding: 0.5em;
+    float: left;
+    font-size: 1.5em;
+    margin-left: 1em;
+    border: 4px solid #1d1d1d;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.068);
+}
+
+#legenda {
+    width: 50%;
+    margin-left: 25.5%;
+    justify-content: space-around;
+}
+
+#legenda div{
+    width: 7em;
+    margin-top: -2.9em;
+    z-index: 5;
+    float: left;
+    text-align: center;
+}
+
+.container-product div {
+    flex-direction: row;
+    width: 12em;
+    height: 12em;
+    border: 4px solid var(--color-neon);
+    box-shadow: 0 0 20px var(--color-neon);
+    border-radius: 150px;
+}
+
+.container-product img {
+    width: 10em;
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
 form {
     display: grid;
 }
 
 .card-container {
-    max-width: 450px;
-    background: #FFF;
-    border-radius: 25px;
+    width: 100%;
+    height: 10em;
+    background: #1d1d1d;
     padding: 25px;
+}
+
+.card-container h3{
+    text-align: center;
+    color: #FFF;
+    margin-top: 2em;
+    padding-bottom: 1em;
+}
+
+form {
+    width: 70%;
+    margin-left: 15%;
 }
 
 input {
-    width:  100%;
+    width:  20em;
     height: 30px;
+    background: none;
     margin-bottom: 10px;
     border: none;
-    border-bottom: 1px solid salmon;
+    padding: 0 1em;
+    border-bottom: 1px solid rgb(148, 148, 148);
+}
+
+button {
+    width: 10em;
+    height: 2em;
+    background: #1d1d1d00;
+    border: 1px solid rgb(149, 149, 149);
+    border-radius: 5px;
+    color: rgb(148, 148, 148);
+    cursor: pointer;
 }
 
 footer {
-    height: 150px;
-    padding: 25px;
+    height: 100px;
+    padding-top: 40px;
     text-align: center;
     color: aliceblue;
     background-color: black;
 }
+
+*:focus,
+*:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper {
+    display: inline-flex;
+    margin-left: -1.2em;
+}
+
+.wrapper .icon {
+    color: #ffffff;
+    position: relative;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    flex-direction: column;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+    position: absolute;
+    content: '';
+    height: 8px;
+    width: 8px;
+    background-color: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+    background-color: #3b5999;
+    color: #ffffff;
+    border: none;
+}
+
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+    background-color: #0a66c2;
+    color: #ffffff;
+    border: none;
+}
+
+.wrapper .instagram:hover{
+    background: linear-gradient(230deg, #3f62e2,#e1306c, #fad842);
+    border: none;
+}
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+    background-color: #e1306c;
+    color: #ffffff;
+    border: none;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+}
+
+.wrapper .spotify:hover,
+.wrapper .spotify:hover .tooltip,
+.wrapper .spotify:hover .tooltip::before {
+    background-color: #069b1e;
+    color: #ffffff;
+    border: none;
+}
+
 

@@ -5,50 +5,117 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
     <title>Black Friday</title>
 </head>
 <body>
     
     <section class="section-container background-section section-one">
         <nav class="nav">
-            <div class="nav-sup">
+            <div class="nav-sup flex">
                 <div class="logo">
                     <a><img src="/assets/LOGO.svg" alt=""> </a>
                 </div>
                 <div class="search">
                     <input type="text" name="pesquisar" id="" placeholder="Pesquisar">
+                    <i class="fas fa-search"></i>
                 </div>
-                <div class="perfil">
-                    <a>
+                <div class="perfil flex">
+                    <a href="">
                         <span class="user-icon"><img src="/assets/user.png" alt=""></span>
                         <span class="user-text">Entrar</span>
                     </a>
-                    <a> <span class="cart-icon"></span></a>
+                    <a href=""> 
+                        <span class="heart-icon"><img src="/assets/heart.png" alt=""></span>
+                    </a>
+                    <a href=""> 
+                        <span class="cart-icon"><img src="/assets/carrinho.png" alt=""></span>
+                    </a>
                 </div>
             </div>
-            
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Promoções</a></li>
-                <li><a href="#">Contato</a></li>
+            <ul class="flex">
+                <li id="department"><a href="#">Todos os departamentos</a></li>
+                <li><a href="#">Eletrodomésticos</a></li>
+                <li><a href="#">Celulares e Smartphones</a></li>
+                <li><a href="#">TV</a></li>
+                <li><a href="#">Informática</a></li>
+                <li><a href="#">Utilidades domésticas</a></li>
+                <li><a href="#" id="promotion">Ofertas</a></li>
             </ul>
+            <div class="line-rainbow"></div>
         </nav>
-        <img src="assets/bf22.png" alt="logotipo">
-    </section>
-    <section class="section-container background-section section-two">
-        <div class="card-container">
-            <div id="content">
-                <form id="form" action="">
-                    <input type="text" placeholder="name" id="nome">
-                    <input type="text" placeholder="email" id="email">
-                    <input type="submit" placeholder="submit">
-                </form>
+        <div class="container">
+            <div class="content-bf">
+                <div>
+                    <h1 class="bf-title1">Black</h1>
+                    <h1 class="bf-title2">friday</h1>
+                    <h2>Até <span>80% OFF*</span></h2>
+                    <h2>+ até <span>12% OFF*</span></h2>
+                </div>
+                
+            </div>
+            <div class="countdown">
+                <h2>As melhores ofertas do ano estão chegando!</h2>
+                <div class="flex" id="contador">
+                    <div class="box-count"></div>
+                    <div class="box-count"></div>
+                    <div class="box-count"></div>
+                    <div class="box-count"></div>
+                </div>
+                <div class="flex" id="legenda">
+                    <div>Dias</div>
+                    <div>Horas</div>
+                    <div>Minutos</div>
+                    <div>Segundos</div>
+                </div>
             </div>
         </div>
+        
+    </section>
+    <section class="section-container background-section section-two">
+        <div class="container-product flex">
+            <div><img src="/assets/computador.png" alt=""></div>
+            <div><img src="/assets/eletro.png" alt=""></div>
+            <div><img src="/assets/tv.png" alt=""></div>
+            <div><img src="/assets/cell.png" alt=""></div>
+        </div>
+        <div class="flex">
+            <div class="card-container">
+                <h3>Não perca nenhuma novidade! Cadastre-se:</h3>
+                <div id="content">
+                    <form class="flex" id="form" action="">
+                        <input type="text" placeholder="Nome" id="nome">
+                        <input type="text" placeholder="E-mail" id="email">
+                        <button type="submit">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
     </section>
     <footer>
-        <p>Todos os direitos reservados.</p>
+        <p>&copy; Desenvolvido por Joice Ramos | 2021</p>
+        <div class="flex redes-sociais-footer col-12 col-sm-12 col-md-12 col-lg-12 col-xl-3">
+            <div class="wrapper">
+                <div class="col-social">
+                    <a href="https://www.linkedin.com/in/joice-ramos-983178139/">
+                        <div class="icon flex linkedin">
+                                <div class="tooltip">LinkedIn</div>
+                                <span><i class="fab fa-linkedin-in"></i></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-social">
+                    <a href="https://www.instagram.com/joiceramos_/">
+                        <div class="icon flex instagram">
+                            <div class="tooltip">Instagram</div>
+                            <span><i class="fab fa-instagram"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 <script type="text/javascript">
@@ -65,6 +132,37 @@
         });
     }   
 </script>
+
+<script type="text/javascript">
+    var data = '2021/11/26';
+    var falta = (new Date(data).getTime() - new Date().getTime()) / 1000;
+    var segundos = Math.round(falta % 60);
+    var minutos = Math.round(falta / 60 % 60);
+    var horas = Math.round(falta / 60 / 60 % 24);
+    var dias = Math.round(falta / 60 / 60 / 24);
+    var divs = document.querySelectorAll('#contador div');
+
+    setInterval(function () {
+        if (segundos == 0) {
+            segundos = 60;
+            minutos--;
+        }
+        if (minutos == 0) {
+            minutos = 60;
+            horas--;
+        }
+        if (horas == 0) {
+            horas = 24;
+            dias--;
+        }
+        segundos--;
+        var contador = [dias, horas, minutos, segundos].forEach(function (contador, i) {
+            divs[i].innerHTML = contador;
+        });
+
+    }, 1000);
+</script>
+
 <script src="js/script.js"></script>
 
 </html>
