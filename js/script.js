@@ -13,9 +13,9 @@ form.addEventListener('submit', (e) => {
     localStorage.setItem('lead', convertData);
     let content = document.getElementById('content')
 
-    let carregando = `<p>Carregando...</p>`
+    let carregando = `<p style="color:white;text-align:center;>Carregando...</p>`
 
-    let pronto = `<p>Pronto...</p>`
+    let pronto = `<p style="color:white;text-align:center;">E-mail cadastrado...</p>`
 
     content.innerHTML = carregando
 
